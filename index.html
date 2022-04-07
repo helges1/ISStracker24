@@ -15,6 +15,7 @@
       integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
       crossorigin=""
     ></script>
+    <script src="https://unpkg.com/@joergdietrich/leaflet.terminator"></script>
     <style>
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
@@ -109,8 +110,15 @@
       const attribution =
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | We are NOT associated with <a href="https://flightradar24">flightradar24</a>';
 
+        
       const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
       const tiles = L.tileLayer(tileUrl, { attribution });
+      var t = L.terminator();
+        t.addTo(mymap);
+        setInterval(function(){updateTerminator(t)}, 500);
+        function updateTerminator(t) {
+          t.setTime();
+        }
       tiles.addTo(mymap);
 
       // Making a marker with a custom icon
