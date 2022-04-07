@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=\, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#0f0f0f">
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
@@ -78,7 +79,7 @@
       }
     </style>
 
-    <title>What is the current location of ISS | ISStracker.com</title>
+    <title>What is the current location of ISS? | ISStracker24.com</title>
   </head>
   <body>
     <div style="width: 100%; background-color: #0f0f0f;">
@@ -145,7 +146,7 @@
         document.getElementById('lat').textContent = latitude.toFixed(2);
         document.getElementById('lon').textContent = longitude.toFixed(2);
         document.getElementById('altitude').textContent = altitude.toFixed(2);
-        document.getElementById('velocity').textContent = velocity.toFixed(2);
+        document.getElementById('velocity').textContent = velocity.toFixed(0);
         document.getElementById('visibility').textContent = visibility;
       }
 
